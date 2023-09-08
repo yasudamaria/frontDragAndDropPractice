@@ -27,6 +27,7 @@ document.addEventListener("dragstart", (event) => {
 
 // drop時の処理
 dropElement.addEventListener("drop", (event) => {
+    // drag先に配置するbuttonの作成
     var buttonId = event.dataTransfer.getData("text/html");
     var button = document.getElementById(buttonId);
     var buttonClone = button.cloneNode(true);
@@ -34,11 +35,20 @@ dropElement.addEventListener("drop", (event) => {
     buttonClone.draggable = false;
     selectedId ++ ;
     buttonClone.setAttribute("onclick", "deleteSelect(id)");
+
+    // buttonの追加
     dropElement.appendChild(buttonClone);
+
+    // listに今のvalue,idの並び順を保存
     selectedValueList.push(button.value);
     selectedIdList.push(buttonClone.id);
+
+    // フロントに反映
     order.value = selectedValueList;
+
     event.preventDefault();
+
+    // 背景色の変更
     efectFlag(false);
 })
 
@@ -76,14 +86,19 @@ function efectFlag(flag) {
  * @param {} id clickした要素のid
  */
 function deleteSelect(id) {
+    // リストから削除
     for(let i in selectedIdList) {
         if (selectedIdList[i]==id) {
             selectedValueList.splice(i, 1);
             selectedIdList.splice(i, 1);
         }
     }
+    
+    //ボタンの表示削除 
     var button = document.getElementById(id);
     button.remove();
+
+    // フロントにリストの反映
     order.value = selectedValueList;
     return;
 }
