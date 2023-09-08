@@ -1,0 +1,30 @@
+.input-container {
+    width: 500px;
+    height: 100px;
+    border: solid 5px gray;
+}
+
+.input-container button {
+    background-color: lightblue;
+    box-shadow: 3px 3px lightgray;
+    margin: 2px;
+}
+
+
+.select-container {
+    margin-top: 50px;
+}
+
+.select-container button {
+    background-color: pink;
+    box-shadow: 3px 3px lightgray;
+}
+
+.select-container button:active {
+    box-shadow: none;
+    transition: 10ms;
+}
+
+#selected {
+    width:500px;
+}

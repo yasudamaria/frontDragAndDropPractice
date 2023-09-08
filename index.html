@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet" href="./stylesheets/index.css" type="text/css">
+</head>
+<h1>ドラッグ＆ドロップ練習</h1>
+<!-- ドラッグ先 -->
+<div class="input-container" id="drop"></div>
+<!--ドラッグされたボタンのvalue一覧-->
+<input type="text" id="selected" readonly>
+<!--ドラッグ元-->
+<div class="select-container">
+    <button type="button" id="columun1" value="1" draggable="true">button1</button>
+    <button type="button" id="columun2" value="2" draggable="true">button2</button>
+    <button type="button" id="columun3" value="3" draggable="true">button3</button>
+    <button type="button" id="columun4" value="4" draggable="true">button4</button>
+    <!-- 利用する要素以下で読み込む -->
+    <script src="./stylesheets/js/dragAndDrop.js"></script>
+</div>
